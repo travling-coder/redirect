@@ -8,4 +8,7 @@ if (window['location'].href.startsWith('https://emn178.pixnet.net/blog/post/')) 
   document.querySelector('link[rel=canonical]').setAttribute('href', url);
   document.body.innerHTML = '<div style="text-align:center;font-size:48px;line-height:1.5">' + element.outerHTML + '</div>';
   // window['localhost'].href = url;
+  document.querySelectorAll('head script').forEach(function(e) {
+    e.remove()
+  });
 }
