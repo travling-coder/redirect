@@ -1,5 +1,6 @@
 if (window['location'].pathname.startsWith('/blog/post/')) {
   var element = document.getElementById('move-to');
+  element.style.color = '#0b84af';
   var url = element.getAttribute('href');
   document.querySelector('link[rel=canonical]').setAttribute('href', url);
   document.body.innerHTML = '<div style="align-items:center;display:flex;font-size:30px;height:100vh;justify-content:center;line-height:1.5">' + element.outerHTML + '</div>';
