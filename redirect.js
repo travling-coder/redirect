@@ -1,12 +1,14 @@
-if (window['location'].href.startsWith('https://emn178.pixnet.net/blog/post/')) {
+if (window['location'].pathname.startsWith('/blog/post/')) {
   var element = document.getElementById('move-to');
   var url = element.getAttribute('href');
-  var meta = document.createElement('meta');
-  meta.httpEquiv = 'refresh';
-  meta.content = `0; url=${url}`;
-  document.head.appendChild(meta);
   document.querySelector('link[rel=canonical]').setAttribute('href', url);
-  document.body.innerHTML = '<div style="text-align:center;font-size:48px;line-height:1.5">' + element.outerHTML + '</div>';
+  document.body.innerHTML = '<div style="align-items:center;display:flex;font-size:30px;height:100vh;justify-content:center;line-height:1.5">' + element.outerHTML + '</div>';
+  if (window.REDIRECT_MODE === 1) {
+    var meta = document.createElement('meta');
+    meta.httpEquiv = 'refresh';
+    meta.content = `0; url=${url}`;
+    document.head.appendChild(meta);
+  }
   // window['localhost'].href = url;
   document.querySelectorAll('head script').forEach(function(e) {
     e.remove()
