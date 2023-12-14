@@ -1,4 +1,5 @@
 if (window['location'].pathname.startsWith('/blog/post/')) {
+  window.REDIRECT_MODE = 1;
   var element = document.getElementById('move-to');
   element.style.color = '#0b84af';
   var url = element.getAttribute('href');
