@@ -1,4 +1,4 @@
-if (window['location'].pathname.startsWith('/blog/post/')) {
+if (window['location'].pathname.startsWith('/blog/posts/')) {
   var element = document.getElementById('move-to');
   element.style.color = '#0b84af';
   var url = element.getAttribute('href');
